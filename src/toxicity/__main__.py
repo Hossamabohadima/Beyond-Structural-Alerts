@@ -166,7 +166,7 @@ if __name__ == "__main__":
         task="train",
         dataset="file",
         representations=["transformer_matrix"],
-        hyperparameter_optimization_time=120,
+        hyperparameter_optimization_time=15*60,
         dataset_path=[
 "/kaggle/working/Beyond-Structural-Alerts/src/toxicity/data/train_clean.csv",
  "/kaggle/working/Beyond-Structural-Alerts/src/toxicity/data/val_clean.csv",
