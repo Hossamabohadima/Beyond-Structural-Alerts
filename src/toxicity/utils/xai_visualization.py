@@ -62,7 +62,6 @@ def get_alert_info(smiles, alert_smarts, df_alerts):
                 fp[i] = 1
                 smarts_str = str(df_alerts.iloc[i]['smarts'])
                 found_alerts.append(smarts_str)
-                # Convert tuples of atom indices to lists for clean JSON serialization
                 matched_atoms_dict[smarts_str] = [list(m) for m in matches]
 
     alert_names_str = ", ".join(found_alerts) if found_alerts else "No Alert"
@@ -108,6 +107,33 @@ def prepare_data(test_file, roc_file, alerts_file, output_dir):
     print(f"Saved alert matches table to: {alert_matches_path}")
 
     return df_test, df_alerts, smiles_col
+
+
+def export_predictions_table(df_test, smiles_col, output_dir, threshold=0.5, run_id="version_0"):
+    print("\n--- Exporting Full Test Predictions Table ---")
+    p_positive = df_test['y_pred'].values
+
+    df_pred = pd.DataFrame({
+        'compound_id': df_test['compound_id'] if 'compound_id' in df_test.columns else df_test.index,
+        'identity_group_id': df_test['identity_group_id'] if 'identity_group_id' in df_test.columns else pd.NA,
+        'original_smiles': df_test['original_smiles'] if 'original_smiles' in df_test.columns else df_test[smiles_col],
+        'standardized_smiles': df_test['standardized_smiles'] if 'standardized_smiles' in df_test.columns else pd.NA,
+        'split': 'test',
+        'y_true': df_test['y_true'].values,
+        'p_positive': p_positive,
+        'y_pred': (p_positive >= threshold).astype(int),
+        'threshold': threshold,
+        'run_id': run_id,
+        'seed': pd.NA
+    })
+
+    for extra_col in ['source', 'original_record_id', 'record_id']:
+        if extra_col in df_test.columns:
+            df_pred[extra_col] = df_test[extra_col]
+
+    pred_path = os.path.join(output_dir, 'predictions_test.csv')
+    df_pred.to_csv(pred_path, index=False)
+    print(f"Saved full test predictions table ({len(df_pred)} rows) to: {pred_path}")
 
 
 # ==========================================
@@ -290,7 +316,6 @@ def generate_comparisons(df_test, df_alerts, smiles_col, xai_paths, output_dir, 
         true1 = df1.loc[idx1, 'y_true']
         true2 = df2.loc[idx2, 'y_true']
 
-        # Identify shared structural alerts between the pair
         fp1 = df1.loc[idx1, 'alert_fp']
         fp2 = df2.loc[idx2, 'alert_fp']
         shared_indices = np.where((fp1 == 1) & (fp2 == 1))[0]
@@ -380,7 +405,7 @@ def generate_comparisons(df_test, df_alerts, smiles_col, xai_paths, output_dir, 
 def run_xai_visualization(test_file_path, roc_file_path, alerts_file_path, xai_paths_dict, output_dir_base):
     """
     Main function to execute the full XAI visualization pipeline and export
-    alert_matches.csv, pairs.csv, and image_mapping.csv.
+    predictions_test.csv, alert_matches.csv, pairs.csv, and image_mapping.csv.
     """
     evaluate_model_performance(roc_file_path)
 
@@ -389,6 +414,8 @@ def run_xai_visualization(test_file_path, roc_file_path, alerts_file_path, xai_p
     except FileNotFoundError as e:
         print(f"Initialization Failed: {e}")
         return
+
+    export_predictions_table(df_test, smiles_col, output_dir_base)
 
     image_mapping_records = []
 
