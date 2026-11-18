@@ -7,7 +7,8 @@ from toxicity.factories.models import ModelFactory
 from toxicity.config import Config
 import numpy as np
 import toxicity.custom_representation
-
+from toxicity.utils.xai_visualization import run_xai_visualization
+import os
 def main(
     task: Literal["train", "download"],
     dataset: Literal["ames", "file"] = "file",
@@ -159,7 +160,7 @@ def save_execution_config(args_dict: dict) -> None:
         yaml.dump(args_dict, file, default_flow_style=False)
 
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"  # السطر ده بيخلي الكود يشوف كارت واحد بس (رقم 0)
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 if __name__ == "__main__":
     main(
@@ -168,8 +169,31 @@ if __name__ == "__main__":
         representations=["transformer_matrix"],
         hyperparameter_optimization_time=15*60,
         dataset_path=[
-"/kaggle/working/Beyond-Structural-Alerts/src/toxicity/data/train_clean.csv",
- "/kaggle/working/Beyond-Structural-Alerts/src/toxicity/data/val_clean.csv",
- "/kaggle/working/Beyond-Structural-Alerts/src/toxicity/data/test_clean.csv"
+"toxicity/data/train_clean.csv",
+ "toxicity/data/val_clean.csv",
+ "toxicity/data/test_clean.csv"
         ]
+    )
+    base_dir = os.getcwd() 
+    
+    test_file = os.path.join(base_dir, 'toxicity/data/test_model_input.csv')
+    roc_file = os.path.join(base_dir, 'model/roc.csv')
+    alerts_file = os.path.join(base_dir, 'toxicity/data/core_alert_definitions.csv')
+    output_images_dir = os.path.join(base_dir, 'model/images_xai')
+    
+    xai_dict = {
+        'SHAP': os.path.join(base_dir, 'model/shap.npy'),
+        'Integrated Gradients': os.path.join(base_dir, 'model/ig.npy'),
+        'DeepLIFT': os.path.join(base_dir, 'model/deeplift.npy'),
+        'Occlusion': os.path.join(base_dir, 'model/occlusion.npy'),
+        'Grad-CAM': os.path.join(base_dir, 'model/gradcams/gradcam_filter_1.npy')
+    }
+    
+    print("\nStarting XAI Visualization Pipeline...")
+    run_xai_visualization(
+        test_file_path=test_file,
+        roc_file_path=roc_file,
+        alerts_file_path=alerts_file,
+        xai_paths_dict=xai_dict,
+        output_dir_base=output_images_dir
     )
