@@ -61,11 +61,9 @@ Five post-hoc attribution methods are computed on the trained model to quantify 
 
 ## Pairwise Similarity (`Sim`) Definition
 
-In the comparison visualizations (`compare/`) and `pairs.csv`, **`Sim` does NOT represent whole-molecule chemical similarity** (such as Morgan/ECFP fingerprints). Instead:
+In the comparison visualizations (`compare/`) and `pairs.csv`, **`Sim` does NOT represent whole-molecule chemical similarity. Instead:
 
-- **Fingerprint Definition**: Binary structural alert presence vector (`alert_fp`), where each bit indicates the presence (`1`) or absence (`0`) of a specific SMARTS alert from `core_alert_definitions.csv`.
-- **Similarity Metric**: **Jaccard / Tanimoto similarity** computed on the binary alert vectors:
-  `Sim = |Alert_FP_1 ∩ Alert_FP_2| / |Alert_FP_1 ∪ Alert_FP_2|`
+
 - **Interpretation**: `Sim` strictly measures **structural alert overlap** between two molecules (e.g., `100%` means both molecules trigger the exact same set of structural alerts despite having different toxicity outcomes or model predictions).
 
 ## Test Output & Generated Tables
@@ -82,7 +80,7 @@ When you run the pipeline from `src/`, the results are saved in the working dire
 ### `model/images_xai/` (Generated Tables & Visualizations)
 
 1. **`predictions_test.csv`** *(Full Test Set Predictions — 1,585 compounds)*:
-   - Contains predictions for every compound in the test split (not limited to the 40 visualized cases).
+   - Contains predictions for every compound in the test split.
    - **Columns**: `compound_id`, `identity_group_id`, `original_smiles`, `standardized_smiles`, `split`, `y_true`, `p_positive` (raw pre-calibration probability), `y_pred` (binary prediction at `threshold = 0.5`), `threshold`, `run_id`, `seed` (plus `source` / `original_record_id` if present in the input file).
 
 2. **`alert_matches.csv`** *(Structural Alert Matching & Atom Indices)*:
