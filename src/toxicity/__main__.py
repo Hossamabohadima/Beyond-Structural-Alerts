@@ -1,3 +1,6 @@
+import numpy as np
+if not hasattr(np, "VisibleDeprecationWarning"):
+    np.VisibleDeprecationWarning = DeprecationWarning
 from typing import List, Optional, Literal, Callable
 from pathlib import Path
 import yaml
@@ -9,6 +12,7 @@ import numpy as np
 import toxicity.custom_representation
 from toxicity.utils.xai_visualization import run_xai_visualization
 import os
+
 def main(
     task: Literal["train", "download"],
     dataset: Literal["ames", "file"] = "file",
@@ -163,6 +167,7 @@ import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 if __name__ == "__main__":
+
     main(
         task="train",
         dataset="file",
