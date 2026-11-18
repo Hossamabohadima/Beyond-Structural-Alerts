@@ -59,7 +59,7 @@ class CNNOptimizer(Optimizer[CNNLightning]):
         """
 
         # hyperparameters
-        dropout = trial.suggest_uniform("dropout", 0.0, 1.0)
+        dropout = trial.suggest_float("dropout", 0.0, 1.0)
         learning_rate = trial.suggest_float("learning_rate", 1e-5, 1e-2, log=False)
         weight_decay = trial.suggest_float("weight_decay", 1e-6, 1e-3, log=False)
 
@@ -107,7 +107,7 @@ class CNNOptimizer(Optimizer[CNNLightning]):
         """Search for optimized hyperparameters. Saves search to database."""
 
         if self.optimized_hyperparameters is not None:
-            pass
+            return
 
         pruner = optuna.pruners.MedianPruner(
             n_startup_trials=5,
@@ -156,7 +156,7 @@ class CNNOptimizer(Optimizer[CNNLightning]):
             enable_checkpointing=True,
             accelerator="auto",
             callbacks=[checkpoint_callback, early_stopping_callback],
-            enable_progress_bar=False,
+            enable_progress_bar=True,  # تم التعديل هنا لظهور شريط التقدم
         )
 
         trainer.fit(final_model, self.train_loader, self.val_loader)

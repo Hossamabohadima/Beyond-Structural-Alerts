@@ -158,12 +158,18 @@ def save_execution_config(args_dict: dict) -> None:
     with open(yaml_file_path, "w") as file:
         yaml.dump(args_dict, file, default_flow_style=False)
 
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"  # السطر ده بيخلي الكود يشوف كارت واحد بس (رقم 0)
 
 if __name__ == "__main__":
     main(
         task="train",
         dataset="file",
         representations=["transformer_matrix"],
-        hyperparameter_optimization_time=600,
-        dataset_path=["data/bbb.csv"]
-)
+        hyperparameter_optimization_time=120,
+        dataset_path=[
+"/kaggle/working/Beyond-Structural-Alerts/src/toxicity/data/train_clean.csv",
+ "/kaggle/working/Beyond-Structural-Alerts/src/toxicity/data/val_clean.csv",
+ "/kaggle/working/Beyond-Structural-Alerts/src/toxicity/data/test_clean.csv"
+        ]
+    )

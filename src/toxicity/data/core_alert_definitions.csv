@@ -1,0 +1,19 @@
+alert_id,name,smarts,definition_version,source_inspiration,is_full_ISS_rule
+CORE_01,Aromatic primary amine,[a]-[NX3;H2;+0],CORE-v0.1,"SA28; broad primary-amine anchor, no contextual exclusions",False
+CORE_02,Aromatic nitro,[a]-[N+](=O)[O-],CORE-v0.1,"SA27; broad nitro anchor, no contextual exclusions",False
+CORE_03,N-nitroso,"[C,c][N]-[NX2;v3]=O",CORE-v0.1,SA21 direct SMARTS,False
+CORE_04,Epoxide,[CX4]1[OX2][CX4]1,CORE-v0.1,SA7 split into epoxide and aziridine,False
+CORE_05,Aziridine,[CX4]1[NX3][CX4]1,CORE-v0.1,SA7 split into epoxide and aziridine,False
+CORE_06,Acyl halide,"[!$([OH1,SH1])]C(=O)[Br,Cl,F,I]",CORE-v0.1,SA1 direct SMARTS,False
+CORE_07,N-methylol,[CX4H2](N)([OX2H1]),CORE-v0.1,SA3 direct SMARTS,False
+CORE_08,Nitrogen or sulfur mustard,"[F,Cl,Br,I][CX4H2][CX4H2][N,S][CX4H2][CX4H2][F,Cl,Br,I]",CORE-v0.1,SA5 direct SMARTS,False
+CORE_09,Beta-lactone/thio analogue,"[O,S]=C1[O,S]CC1",CORE-v0.1,SA6 first component,False
+CORE_10,Propane sultone,O=S1(=O)(CCCO1),CORE-v0.1,SA6 second component,False
+CORE_11,Alkyl nitrite,O=[NX2]OC,CORE-v0.1,SA9 direct SMARTS,False
+CORE_12,Simple aldehyde,[#6][$([CX3H1]);!$(CC=C)](=O),CORE-v0.1,SA11 direct SMARTS,False
+CORE_13,Isocyanate/isothiocyanate,"[NX2]=C=[O,S]",CORE-v0.1,SA15 direct SMARTS,False
+CORE_14,Aromatic azo,[a]-[N]=[N]-[a],CORE-v0.1,"SA29 broad core, no sulfonic-acid exclusions",False
+CORE_15,Hydrazine core,[N;+0;!$(N=*)]-!@[N;+0;!$(N=*)],CORE-v0.1,"SA13 broad core, excludes imine/nitroso nitrogen",False
+CORE_16,Alpha beta unsaturated carbonyl core,[C]=[C]-[CX3](=[OX1]),CORE-v0.1,SA10 broad core includes acids/esters; context left for study,False
+CORE_17,Alkenylbenzene,c1ccccc1C[C;!R]=C,CORE-v0.1,SA38 direct SMARTS,False
+CORE_18,Organic azide,[#6]-[N]=[N+]=[N-],CORE-v0.1,SA22 charge-normalized organic-azide anchor,False
