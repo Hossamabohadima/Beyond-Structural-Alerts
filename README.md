@@ -68,9 +68,7 @@ When you run the pipeline from `src/`, the results are saved in the working dire
 - **Threshold & Calibration**: Standard threshold of `0.5`. Output probabilities are raw pre-calibration Sigmoid outputs.
 - **XAI Target**: Attributions are computed on pre-sigmoid **Logits** for Class 1.
 - **Random Seed**: No global random seed was strictly enforced for this run.
-- **Structural Alerts**: Defined in `src/toxicity/data/core_alert_definitions.csv` and `src/toxicity/utils/smarts_patterns.py`.
-- **Unavailable Artifacts**: A unified full-split prediction metadata table (`compound_id`, `identity_group_id`, etc.), an explicit exported `token-to-atom` mapping file, and a standalone compound pairs/matched-atom-indices table were not exported in this run version.
-
+- **Structural Alerts**: Defined in `src/toxicity/data/core_alert_definitions.csv` .
 ## Citation
 
 This repository is part of the project "Beyond Structural Alerts: Toxicity and Mutagenicity XAI Benchmark".  

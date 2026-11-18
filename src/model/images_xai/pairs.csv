@@ -1,0 +1,4 @@
+case,mol1_orig_idx,mol1_smiles,mol1_y_true,mol1_y_pred,mol2_orig_idx,mol2_smiles,mol2_y_true,mol2_y_pred,shared_alerts_smarts,similarity,fingerprint_definition,similarity_metric
+TP_vs_TN,1,CC=C(Cl)C1=CC(=O)C23CC2C(C)(C)OC3(O)C1=O,1.0,0.9168816804885864,70,CCCCOC(=O)/C=C\C(=O)OCCCC,0.0,0.0789593458175659,[C]=[C]-[CX3](=[OX1]),1.0,Binary structural alert presence vector (core_alert_definitions),Jaccard / Tanimoto on binary alert fingerprint
+TP_vs_FN,1,CC=C(Cl)C1=CC(=O)C23CC2C(C)(C)OC3(O)C1=O,1.0,0.9168816804885864,11,C=C1CC(=CC)C(=O)OC2CCN3CC=C(COC(=O)C1(C)O)C23,1.0,0.3152154088020324,[C]=[C]-[CX3](=[OX1]),1.0,Binary structural alert presence vector (core_alert_definitions),Jaccard / Tanimoto on binary alert fingerprint
+FP_vs_TN,28,O=C1C=CC(=O)C(Cl)=C1,0.0,0.6086989641189575,70,CCCCOC(=O)/C=C\C(=O)OCCCC,0.0,0.0789593458175659,[C]=[C]-[CX3](=[OX1]),1.0,Binary structural alert presence vector (core_alert_definitions),Jaccard / Tanimoto on binary alert fingerprint
