@@ -1,56 +1,78 @@
 # Beyond Structural Alerts: Toxicity and Mutagenicity XAI Benchmark
 
-This repository contains the complete codebase, models, and explainable AI (XAI) outputs for evaluating chemical toxicity and mutagenicity using Deep Learning and structural alerts.
+A benchmarking workflow for analyzing the robustness, consistency, and agreement of explainability techniques applied to molecular property prediction models for toxicity and mutagenicity detection.
 
-**Run Date:** November 18, 2026  
-**Version:** 1.0.0  
+**Version:** 1.0.0 | **Run Date:** November 18, 2026
 
----
+## Getting Started
 
-## 🛠️ Prerequisites and Installation
+This section will help you set up the required environment and run the project locally.
 
-This project is built using Python 3.13. To ensure reproducibility, all dependencies, library versions, and packages used during this run are documented in the `requirements.txt` file located in the root directory.
+### Prerequisites
 
-**1. Clone the repository:**
-`git clone https://github.com/Hossamabohadima/Beyond-Structural-Alerts.git`
-`cd Beyond-Structural-Alerts`
+You need to have an environment with Python 3.13. All required dependencies and exact library versions are listed in `requirements.txt` in the root directory.
 
-**2. Install dependencies:**
-`pip install -r requirements.txt`
+    $ pip install -r requirements.txt
 
-**3. Run the pipeline:**
-All executable scripts are located in the `src` directory. You must navigate to this directory before running the code.
-`cd src`
-`python -m toxicity`
+### Installation
 
----
+Clone the repository:
 
-## 📊 Deliverables & Run Documentation
+    $ git clone https://github.com/Hossamabohadima/Beyond-Structural-Alerts.git
+    $ cd Beyond-Structural-Alerts
 
-This section provides detailed documentation of the output files, settings, and explicit notes regarding the availability of specific requested deliverables for this run version.
+## Usage
 
-### 1. Scripts and Execution Settings
-- **Scripts Provided:** Data processing, splitting, training, prediction, and XAI calculation scripts (Grad-CAM, SHAP, DeepLIFT, Integrated Gradients, Occlusion) are fully available inside the `src` directory. The XAI image generation and visualization pipeline (`xai_visualization.py`) is fully integrated and runs automatically at the end of the `__main__.py` execution.
-- **Execution Command:** `python -m toxicity`
-- **Execution Parameters:** This run utilizes the `transformer_matrix` representation, performs hyperparameter optimization for 15 minutes, and trains directly on pre-split datasets (`train_clean.csv`, `val_clean.csv`, `test_clean.csv`).
-- **Model & Training Config:** All model hyperparameters, training configurations, and architecture setups are preserved in `src/model/training/version_0/hparams.yaml`.
-- **Saved Model Weights:** Saved in `.ckpt` format inside the `src/model/` directory.
-- **Random Seed:** No explicit global random seed (e.g., `pl.seed_everything()`) was strictly enforced or logged for this specific training run.
+All executable scripts are located inside the `src` directory. Navigate to `src` and run the main package module:
 
-### 2. Data and Full Predictions
-- **Class 1 Definition:** In this project, `Class 1` explicitly refers to a **Toxic** or **Mutagenic** compound.
-- **Threshold & Calibration:** A standard threshold of `0.5` is used. The output probabilities (`p_positive`) are raw probabilities taken directly after the Sigmoid activation function (they are **pre-calibration** / uncalibrated).
-- **Missing Data Note (Full Prediction Table & Image Mapping):** The unified comprehensive prediction table containing specific columns (`compound_id`, `identity_group_id`, `original_smiles`, `standardized_smiles`, `split`, `y_true`, `p_positive`, `y_pred`, `threshold`, `run_id`, `seed`) and the explicit compound-to-image mapping table are **NOT AVAILABLE** in this run. 
-  - *Reason:* The current evaluation pipeline processes the data and outputs the XAI metrics/images directly without aggregating these specific metadata columns into a single unified CSV file. No dummy or synthetic values were generated to fill this gap.
+    $ cd src
+    $ python -m toxicity
 
-### 3. Raw XAI Attributions
-- **Target & Background:** XAI methods were computed using the **Logits** (pre-sigmoid outputs) as the target, interpreting predictions for **Class 1**.
-- **Grad-CAM Layer:** Grad-CAM was applied using the final encoder layers of the Transformer model.
-- **Format:** Raw, pre-color-normalized numerical attribution values are available and saved as `.npy` arrays in the `src/model/` directory (e.g., `ig.npy`, `shap.npy`, `deeplift.npy`, `gradcams/`).
-- **Missing Data Note (Token-to-Atom Map):** The explicit `token-to-atom` mapping matrix is **NOT AVAILABLE** as a saved file in this run.
-  - *Reason:* The Transformer utilizes SMILES character/subword tokens rather than explicit graph atoms. The explicit translation mapping was not exported during runtime. However, it can be re-extracted mathematically from the saved tokenizer and model weights without requiring retraining.
+This executes the full pipeline: training the `transformer_matrix` model with hyperparameter optimization, evaluating on the test set, computing XAI attributions, and automatically running the XAI visualization module (`xai_visualization.py`).
 
-### 4. Alerts Definitions and Pairs
-- **Alerts Definitions:** The structural alerts utilized in this project are defined in `src/toxicity/data/core_alert_definitions.csv` and `src/toxicity/utils/smarts_patterns.py` (containing SMARTS patterns).
-- **Missing Data Note (Pairs Table & Match Indices):** The "Pairs Table" (containing compound pairs, shared alerts, Tanimoto similarity scores, and fingerprints) and the specific "Matched Atom Indices" per compound are **NOT AVAILABLE** in this run package.
-  - *Reason:* The pipeline in this specific version executed the deep learning and XAI components but did not execute or export the explicit rule-based similarity matching and pair-generation scripts. No substitute data was generated.
+### Execution Parameters (configured in `src/toxicity/__main__.py`)
+
+- **task**: The task to execute (`train`).
+- **dataset**: Specifies the dataset source. Choices are:
+  - `ames`
+  - `file` (default in current run; uses custom dataset files specified in `dataset_path`)
+- **dataset_path**: Path(s) to custom dataset files (`toxicity/data/train_clean.csv`, `toxicity/data/val_clean.csv`, `toxicity/data/test_clean.csv`). Datasets must contain a `smiles` column and a binary label column.
+- **representations**: Molecular representation used (`transformer_matrix`).
+- **split**: Split ratios for training, validation, and testing if using a single unsplit file. Default: `[0.7, 0.1, 0.2]`.
+- **hyperparameter_optimization_time**: Time in seconds allocated for Optuna hyperparameter optimization. Current run: `900` (15 minutes).
+
+## Test Output
+
+When you run the pipeline from `src/`, the results are saved in the working directory with the following structure:
+
+### `model/`
+- `roc.csv`: True labels (`y_true`) and raw predicted probabilities (`y_pred`) for the test set.
+- `training/version_0/hparams.yaml`: Saved model hyperparameters and training configurations.
+- `*.ckpt`: Checkpoint file(s) for the trained model.
+- `deeplift.npy`: Raw attribution scores generated using DeepLIFT.
+- `ig.npy`: Raw Integrated Gradients attribution scores.
+- `occlusion.npy`: Raw Occlusion sensitivity attributions.
+- `shap.npy`: Raw SHAP-based feature attributions.
+- `gradcams/`: Layer-wise Grad-CAM raw `.npy` maps from the encoder.
+- `images_xai/`: Generated molecular XAI visualizations organized by prediction outcome (`TP/`, `TN/`, `FP/`, `FN/`) and pairwise comparisons (`compare/`).
+
+### `data_dir/`
+- Contains the processed dataset files used during the run.
+
+### `model_config.yaml`
+- A configuration file summarizing all execution parameters used for the run.
+
+## Run Notes & Deliverables Status
+
+- **Class 1 Definition**: Represents a **Toxic / Mutagenic** compound.
+- **Threshold & Calibration**: Standard threshold of `0.5`. Output probabilities are raw pre-calibration Sigmoid outputs.
+- **XAI Target**: Attributions are computed on pre-sigmoid **Logits** for Class 1.
+- **Random Seed**: No global random seed was strictly enforced for this run.
+- **Structural Alerts**: Defined in `src/toxicity/data/core_alert_definitions.csv` and `src/toxicity/utils/smarts_patterns.py`.
+- **Unavailable Artifacts**: A unified full-split prediction metadata table (`compound_id`, `identity_group_id`, etc.), an explicit exported `token-to-atom` mapping file, and a standalone compound pairs/matched-atom-indices table were not exported in this run version.
+
+## Citation
+
+This repository is part of the project "Beyond Structural Alerts: Toxicity and Mutagenicity XAI Benchmark".  
+Published paper: TODO  
+Bibtex: TODO
