@@ -189,15 +189,20 @@ def find_best_pair(df1, df2):
 # ==========================================
 # 4. Generate Individual Case Images
 # ==========================================
+# ==========================================
+# 4. Generate Individual Case Images
+# ==========================================
 def generate_individual_cases(df_test, smiles_col, xai_paths, output_dir, image_mapping_records):
     print("\n--- Generating Individual Case XAI Images ---")
     os.makedirs(output_dir, exist_ok=True)
 
+    has_alert = ~df_test['alert_names'].isin(['No Alert', 'None'])
+
     cases = {
         'TP': df_test[(df_test['y_true'] == 1) & (df_test['y_pred'] >= 0.5)].sort_values(by='y_pred', ascending=False).head(10).reset_index(),
-        'TN': df_test[(df_test['y_true'] == 0) & (df_test['y_pred'] < 0.5)].sort_values(by='y_pred', ascending=True).head(10).reset_index(),
+        'TN': df_test[(df_test['y_true'] == 0) & (df_test['y_pred'] < 0.5) & has_alert].sort_values(by='y_pred', ascending=True).head(10).reset_index(),
         'FP': df_test[(df_test['y_true'] == 0) & (df_test['y_pred'] >= 0.5)].sort_values(by='y_pred', ascending=False).head(10).reset_index(),
-        'FN': df_test[(df_test['y_true'] == 1) & (df_test['y_pred'] < 0.5)].sort_values(by='y_pred', ascending=True).head(10).reset_index()
+        'FN': df_test[(df_test['y_true'] == 1) & (df_test['y_pred'] < 0.5) & has_alert].sort_values(by='y_pred', ascending=True).head(10).reset_index()
     }
 
     for case_name, df_case in cases.items():
@@ -279,17 +284,17 @@ def generate_comparisons(df_test, df_alerts, smiles_col, xai_paths, output_dir, 
         'TP_vs_TN': {
             'df1': df_test[(df_test['y_true'] == 1) & (df_test['y_pred'] >= 0.5)].reset_index(),
             'df2': df_test[(df_test['y_true'] == 0) & (df_test['y_pred'] < 0.5)].reset_index(),
-            'title1': 'Toxic (TP)', 'title2': 'Non-Toxic (TN)'
+            'title1': 'Ames-positive (TP)', 'title2': 'Ames-negative (TN)'
         },
         'TP_vs_FN': {
             'df1': df_test[(df_test['y_true'] == 1) & (df_test['y_pred'] >= 0.5)].reset_index(),
             'df2': df_test[(df_test['y_true'] == 1) & (df_test['y_pred'] < 0.5)].reset_index(),
-            'title1': 'Toxic (TP)', 'title2': 'Toxic (FN - Missed)'
+            'title1': 'Ames-positive (TP)', 'title2': 'Ames-positive (FN - Missed)'
         },
         'FP_vs_TN': {
             'df1': df_test[(df_test['y_true'] == 0) & (df_test['y_pred'] >= 0.5)].reset_index(),
             'df2': df_test[(df_test['y_true'] == 0) & (df_test['y_pred'] < 0.5)].reset_index(),
-            'title1': 'Non-Toxic (FP - False Alarm)', 'title2': 'Non-Toxic (TN)'
+            'title1': 'Ames-negative (FP - False Alarm)', 'title2': 'Ames-negative (TN)'
         }
     }
 
@@ -357,7 +362,10 @@ def generate_comparisons(df_test, df_alerts, smiles_col, xai_paths, output_dir, 
                 weights2 = get_atom_weights(smiles2, scores2)
 
                 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
-                fig.suptitle(f"{case_name.replace('_', ' ')} | XAI: {method_name} | Sim: {sim*100:.0f}%", fontsize=16, fontweight='bold')
+                fig.suptitle(
+                    f"{case_name.replace('_', ' ')} | XAI: {method_name}\nShared Alert(s): {shared_alerts_str}",
+                    fontsize=14, fontweight='bold'
+                )
 
                 if mol1 and len(weights1) == mol1.GetNumAtoms():
                     img1 = get_xai_image(mol1, weights1, size=(450, 450))
@@ -397,7 +405,6 @@ def generate_comparisons(df_test, df_alerts, smiles_col, xai_paths, output_dir, 
     pairs_path = os.path.join(output_dir, 'pairs.csv')
     pd.DataFrame(pairs_records).to_csv(pairs_path, index=False)
     print(f"Saved pairs table to: {pairs_path}")
-
 
 # ==========================================
 # 6. Main Runner Function
