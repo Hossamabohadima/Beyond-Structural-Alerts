@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from rdkit import Chem
 from rdkit.Chem.Draw import SimilarityMaps, rdMolDraw2D
 from PIL import Image
-
+import re
 
 # ==========================================
 # 1. Performance Evaluation
@@ -139,23 +139,44 @@ def export_predictions_table(df_test, smiles_col, output_dir, threshold=0.5, run
 # ==========================================
 # 3. Helper Functions for XAI Images
 # ==========================================
-def get_atom_weights(smiles, token_scores):
+def get_atom_weights(smiles, token_scores, agg='mean'):
+    ATOM_PATTERN = re.compile(r"\[[^\]]+\]|Br|Cl|[BCNOPSFIbcnops]")
     mol = Chem.MolFromSmiles(smiles)
     if mol is None:
         return []
     num_atoms = mol.GetNumAtoms()
-    weights = []
-    atom_idx = 0
     token_scores = np.atleast_1d(token_scores)
-    for i, char in enumerate(smiles):
-        if char.isalpha() and atom_idx < num_atoms:
-            score = float(token_scores[i]) if i < len(token_scores) else 0.0
-            weights.append(score)
-            atom_idx += 1
+    weights = []
+
+    matches = list(ATOM_PATTERN.finditer(smiles))
+
+    for match in matches:
+        token_text = match.group(0)
+        # تجاهل [H] الصريحة إذا كان RDKit قد حذفها تلقائياً عند بناء الجزيء
+        if token_text == '[H]' and len(matches) > num_atoms:
+            continue
+
+        start, end = match.span()
+        char_scores = [
+            float(token_scores[idx])
+            for idx in range(start, end)
+            if idx < len(token_scores)
+        ]
+
+        if not char_scores:
+            weight = 0.0
+        elif agg == 'sum':
+            weight = float(np.sum(char_scores))
+        else:
+            weight = float(np.mean(char_scores))
+
+        weights.append(weight)
+        if len(weights) == num_atoms:
+            break
+
     while len(weights) < num_atoms:
         weights.append(0.0)
     return weights[:num_atoms]
-
 
 def get_xai_image(mol, weights, size=(400, 400)):
     d = rdMolDraw2D.MolDraw2DCairo(size[0], size[1])
