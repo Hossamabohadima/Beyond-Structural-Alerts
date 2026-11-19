@@ -338,9 +338,6 @@ def generate_comparisons(df_test, df_alerts, smiles_col, xai_paths, output_dir, 
             'mol2_y_true': true2,
             'mol2_y_pred': pred2,
             'shared_alerts_smarts': shared_alerts_str,
-            'similarity': float(sim),
-            'fingerprint_definition': 'Binary structural alert presence vector (core_alert_definitions)',
-            'similarity_metric': 'Jaccard / Tanimoto on binary alert fingerprint'
         })
 
         mol1 = Chem.MolFromSmiles(smiles1)
