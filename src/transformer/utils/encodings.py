@@ -1,6 +1,6 @@
 from typing import List, Dict
 import torch
-from xai_benchmark.config import Config
+from toxicity.config import Config
 from transformer.models.transformer_vec import SeqToSeqTransformerVector
 from transformer.models.transformer_mat import SeqToSeqTransformerMatrix
 
