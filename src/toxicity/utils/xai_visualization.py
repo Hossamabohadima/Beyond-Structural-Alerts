@@ -139,7 +139,13 @@ def export_predictions_table(df_test, smiles_col, output_dir, threshold=0.5, run
 # ==========================================
 # 3. Helper Functions for XAI Images
 # ==========================================
-def get_atom_weights(smiles, token_scores, agg='mean'):
+def get_atom_weights(smiles, token_scores, offset=1, agg='mean'):
+    """
+    smiles: The original SMILES string
+    token_scores: A 1D array of raw values for each token
+    offset: 1, since index 0 is reserved for the <SOS> token (set to 0 only if <SOS> has been removed from the .npy file)
+    agg: The aggregation method for multi-character atom symbols—such as 'Cl' or '[C@@H]'—(options: 'mean' or 'sum')
+    """
     ATOM_PATTERN = re.compile(r"\[[^\]]+\]|Br|Cl|[BCNOPSFIbcnops]")
     mol = Chem.MolFromSmiles(smiles)
     if mol is None:
@@ -152,17 +158,15 @@ def get_atom_weights(smiles, token_scores, agg='mean'):
 
     for match in matches:
         token_text = match.group(0)
-        # تجاهل [H] الصريحة إذا كان RDKit قد حذفها تلقائياً عند بناء الجزيء
         if token_text == '[H]' and len(matches) > num_atoms:
             continue
 
         start, end = match.span()
         char_scores = [
-            float(token_scores[idx])
+            float(token_scores[idx + offset])
             for idx in range(start, end)
-            if idx < len(token_scores)
+            if (idx + offset) < len(token_scores)
         ]
-
         if not char_scores:
             weight = 0.0
         elif agg == 'sum':
@@ -173,11 +177,9 @@ def get_atom_weights(smiles, token_scores, agg='mean'):
         weights.append(weight)
         if len(weights) == num_atoms:
             break
-
     while len(weights) < num_atoms:
         weights.append(0.0)
     return weights[:num_atoms]
-
 def get_xai_image(mol, weights, size=(400, 400)):
     d = rdMolDraw2D.MolDraw2DCairo(size[0], size[1])
     SimilarityMaps.GetSimilarityMapFromWeights(mol, weights, colorMap='bwr', contourLines=10, draw2d=d)
