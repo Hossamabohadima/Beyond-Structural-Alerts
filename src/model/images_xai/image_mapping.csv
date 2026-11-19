@@ -1,1 +1,216 @@
-
+image_type,case,orig_idx,smiles,y_true,y_pred,xai_method,image_filename,relative_path
+individual,TP,1573,O=C(/C=C/c1ccc([N+](=O)[O-])o1)N/N=C/c1ccc([N+](=O)[O-])o1,1.0,0.9994101524353028,SHAP,TP_mol_1_SHAP.png,TP/TP_mol_1_SHAP.png
+individual,TP,1573,O=C(/C=C/c1ccc([N+](=O)[O-])o1)N/N=C/c1ccc([N+](=O)[O-])o1,1.0,0.9994101524353028,Integrated Gradients,TP_mol_1_Integrated_Gradients.png,TP/TP_mol_1_Integrated_Gradients.png
+individual,TP,1573,O=C(/C=C/c1ccc([N+](=O)[O-])o1)N/N=C/c1ccc([N+](=O)[O-])o1,1.0,0.9994101524353028,DeepLIFT,TP_mol_1_DeepLIFT.png,TP/TP_mol_1_DeepLIFT.png
+individual,TP,1573,O=C(/C=C/c1ccc([N+](=O)[O-])o1)N/N=C/c1ccc([N+](=O)[O-])o1,1.0,0.9994101524353028,Occlusion,TP_mol_1_Occlusion.png,TP/TP_mol_1_Occlusion.png
+individual,TP,1573,O=C(/C=C/c1ccc([N+](=O)[O-])o1)N/N=C/c1ccc([N+](=O)[O-])o1,1.0,0.9994101524353028,Grad-CAM,TP_mol_1_Grad_CAM.png,TP/TP_mol_1_Grad_CAM.png
+individual,TP,1195,O=CNNc1nc(-c2ccc([N+](=O)[O-])o2)cs1,1.0,0.9992965459823608,SHAP,TP_mol_2_SHAP.png,TP/TP_mol_2_SHAP.png
+individual,TP,1195,O=CNNc1nc(-c2ccc([N+](=O)[O-])o2)cs1,1.0,0.9992965459823608,Integrated Gradients,TP_mol_2_Integrated_Gradients.png,TP/TP_mol_2_Integrated_Gradients.png
+individual,TP,1195,O=CNNc1nc(-c2ccc([N+](=O)[O-])o2)cs1,1.0,0.9992965459823608,DeepLIFT,TP_mol_2_DeepLIFT.png,TP/TP_mol_2_DeepLIFT.png
+individual,TP,1195,O=CNNc1nc(-c2ccc([N+](=O)[O-])o2)cs1,1.0,0.9992965459823608,Occlusion,TP_mol_2_Occlusion.png,TP/TP_mol_2_Occlusion.png
+individual,TP,1195,O=CNNc1nc(-c2ccc([N+](=O)[O-])o2)cs1,1.0,0.9992965459823608,Grad-CAM,TP_mol_2_Grad_CAM.png,TP/TP_mol_2_Grad_CAM.png
+individual,TP,768,O=[N+]([O-])/C=C/c1ccc([N+](=O)[O-])o1,1.0,0.9990330934524536,SHAP,TP_mol_3_SHAP.png,TP/TP_mol_3_SHAP.png
+individual,TP,768,O=[N+]([O-])/C=C/c1ccc([N+](=O)[O-])o1,1.0,0.9990330934524536,Integrated Gradients,TP_mol_3_Integrated_Gradients.png,TP/TP_mol_3_Integrated_Gradients.png
+individual,TP,768,O=[N+]([O-])/C=C/c1ccc([N+](=O)[O-])o1,1.0,0.9990330934524536,DeepLIFT,TP_mol_3_DeepLIFT.png,TP/TP_mol_3_DeepLIFT.png
+individual,TP,768,O=[N+]([O-])/C=C/c1ccc([N+](=O)[O-])o1,1.0,0.9990330934524536,Occlusion,TP_mol_3_Occlusion.png,TP/TP_mol_3_Occlusion.png
+individual,TP,768,O=[N+]([O-])/C=C/c1ccc([N+](=O)[O-])o1,1.0,0.9990330934524536,Grad-CAM,TP_mol_3_Grad_CAM.png,TP/TP_mol_3_Grad_CAM.png
+individual,TP,1569,Nc1ccc(-c2ccc([N+](=O)[O-])cc2N)c([N+](=O)[O-])c1,1.0,0.9989690780639648,SHAP,TP_mol_4_SHAP.png,TP/TP_mol_4_SHAP.png
+individual,TP,1569,Nc1ccc(-c2ccc([N+](=O)[O-])cc2N)c([N+](=O)[O-])c1,1.0,0.9989690780639648,Integrated Gradients,TP_mol_4_Integrated_Gradients.png,TP/TP_mol_4_Integrated_Gradients.png
+individual,TP,1569,Nc1ccc(-c2ccc([N+](=O)[O-])cc2N)c([N+](=O)[O-])c1,1.0,0.9989690780639648,DeepLIFT,TP_mol_4_DeepLIFT.png,TP/TP_mol_4_DeepLIFT.png
+individual,TP,1569,Nc1ccc(-c2ccc([N+](=O)[O-])cc2N)c([N+](=O)[O-])c1,1.0,0.9989690780639648,Occlusion,TP_mol_4_Occlusion.png,TP/TP_mol_4_Occlusion.png
+individual,TP,1569,Nc1ccc(-c2ccc([N+](=O)[O-])cc2N)c([N+](=O)[O-])c1,1.0,0.9989690780639648,Grad-CAM,TP_mol_4_Grad_CAM.png,TP/TP_mol_4_Grad_CAM.png
+individual,TP,194,COc1cccc(/C=C/c2ccc([N+](=O)[O-])cc2)c1,1.0,0.9988242983818054,SHAP,TP_mol_5_SHAP.png,TP/TP_mol_5_SHAP.png
+individual,TP,194,COc1cccc(/C=C/c2ccc([N+](=O)[O-])cc2)c1,1.0,0.9988242983818054,Integrated Gradients,TP_mol_5_Integrated_Gradients.png,TP/TP_mol_5_Integrated_Gradients.png
+individual,TP,194,COc1cccc(/C=C/c2ccc([N+](=O)[O-])cc2)c1,1.0,0.9988242983818054,DeepLIFT,TP_mol_5_DeepLIFT.png,TP/TP_mol_5_DeepLIFT.png
+individual,TP,194,COc1cccc(/C=C/c2ccc([N+](=O)[O-])cc2)c1,1.0,0.9988242983818054,Occlusion,TP_mol_5_Occlusion.png,TP/TP_mol_5_Occlusion.png
+individual,TP,194,COc1cccc(/C=C/c2ccc([N+](=O)[O-])cc2)c1,1.0,0.9988242983818054,Grad-CAM,TP_mol_5_Grad_CAM.png,TP/TP_mol_5_Grad_CAM.png
+individual,TP,557,Nc1ccc(C=Cc2ccc([N+](=O)[O-])cc2)cc1,1.0,0.9986265897750854,SHAP,TP_mol_6_SHAP.png,TP/TP_mol_6_SHAP.png
+individual,TP,557,Nc1ccc(C=Cc2ccc([N+](=O)[O-])cc2)cc1,1.0,0.9986265897750854,Integrated Gradients,TP_mol_6_Integrated_Gradients.png,TP/TP_mol_6_Integrated_Gradients.png
+individual,TP,557,Nc1ccc(C=Cc2ccc([N+](=O)[O-])cc2)cc1,1.0,0.9986265897750854,DeepLIFT,TP_mol_6_DeepLIFT.png,TP/TP_mol_6_DeepLIFT.png
+individual,TP,557,Nc1ccc(C=Cc2ccc([N+](=O)[O-])cc2)cc1,1.0,0.9986265897750854,Occlusion,TP_mol_6_Occlusion.png,TP/TP_mol_6_Occlusion.png
+individual,TP,557,Nc1ccc(C=Cc2ccc([N+](=O)[O-])cc2)cc1,1.0,0.9986265897750854,Grad-CAM,TP_mol_6_Grad_CAM.png,TP/TP_mol_6_Grad_CAM.png
+individual,TP,672,Nc1ncnc2c1ncn2-c1ccc([N+](=O)[O-])cc1[N+](=O)[O-],1.0,0.9983287453651428,SHAP,TP_mol_7_SHAP.png,TP/TP_mol_7_SHAP.png
+individual,TP,672,Nc1ncnc2c1ncn2-c1ccc([N+](=O)[O-])cc1[N+](=O)[O-],1.0,0.9983287453651428,Integrated Gradients,TP_mol_7_Integrated_Gradients.png,TP/TP_mol_7_Integrated_Gradients.png
+individual,TP,672,Nc1ncnc2c1ncn2-c1ccc([N+](=O)[O-])cc1[N+](=O)[O-],1.0,0.9983287453651428,DeepLIFT,TP_mol_7_DeepLIFT.png,TP/TP_mol_7_DeepLIFT.png
+individual,TP,672,Nc1ncnc2c1ncn2-c1ccc([N+](=O)[O-])cc1[N+](=O)[O-],1.0,0.9983287453651428,Occlusion,TP_mol_7_Occlusion.png,TP/TP_mol_7_Occlusion.png
+individual,TP,672,Nc1ncnc2c1ncn2-c1ccc([N+](=O)[O-])cc1[N+](=O)[O-],1.0,0.9983287453651428,Grad-CAM,TP_mol_7_Grad_CAM.png,TP/TP_mol_7_Grad_CAM.png
+individual,TP,873,Nc1nc(-c2ccc([N+](=O)[O-])cc2)nc2c1ncn2-c1ccc([N+](=O)[O-])cc1,1.0,0.9983114004135132,SHAP,TP_mol_8_SHAP.png,TP/TP_mol_8_SHAP.png
+individual,TP,873,Nc1nc(-c2ccc([N+](=O)[O-])cc2)nc2c1ncn2-c1ccc([N+](=O)[O-])cc1,1.0,0.9983114004135132,Integrated Gradients,TP_mol_8_Integrated_Gradients.png,TP/TP_mol_8_Integrated_Gradients.png
+individual,TP,873,Nc1nc(-c2ccc([N+](=O)[O-])cc2)nc2c1ncn2-c1ccc([N+](=O)[O-])cc1,1.0,0.9983114004135132,DeepLIFT,TP_mol_8_DeepLIFT.png,TP/TP_mol_8_DeepLIFT.png
+individual,TP,873,Nc1nc(-c2ccc([N+](=O)[O-])cc2)nc2c1ncn2-c1ccc([N+](=O)[O-])cc1,1.0,0.9983114004135132,Occlusion,TP_mol_8_Occlusion.png,TP/TP_mol_8_Occlusion.png
+individual,TP,873,Nc1nc(-c2ccc([N+](=O)[O-])cc2)nc2c1ncn2-c1ccc([N+](=O)[O-])cc1,1.0,0.9983114004135132,Grad-CAM,TP_mol_8_Grad_CAM.png,TP/TP_mol_8_Grad_CAM.png
+individual,TP,1398,O=[N+]([O-])c1cc([N+](=O)[O-])c2c3ccccc3c3cccc4ccc1c2c43,1.0,0.9982499480247498,SHAP,TP_mol_9_SHAP.png,TP/TP_mol_9_SHAP.png
+individual,TP,1398,O=[N+]([O-])c1cc([N+](=O)[O-])c2c3ccccc3c3cccc4ccc1c2c43,1.0,0.9982499480247498,Integrated Gradients,TP_mol_9_Integrated_Gradients.png,TP/TP_mol_9_Integrated_Gradients.png
+individual,TP,1398,O=[N+]([O-])c1cc([N+](=O)[O-])c2c3ccccc3c3cccc4ccc1c2c43,1.0,0.9982499480247498,DeepLIFT,TP_mol_9_DeepLIFT.png,TP/TP_mol_9_DeepLIFT.png
+individual,TP,1398,O=[N+]([O-])c1cc([N+](=O)[O-])c2c3ccccc3c3cccc4ccc1c2c43,1.0,0.9982499480247498,Occlusion,TP_mol_9_Occlusion.png,TP/TP_mol_9_Occlusion.png
+individual,TP,1398,O=[N+]([O-])c1cc([N+](=O)[O-])c2c3ccccc3c3cccc4ccc1c2c43,1.0,0.9982499480247498,Grad-CAM,TP_mol_9_Grad_CAM.png,TP/TP_mol_9_Grad_CAM.png
+individual,TP,146,NNc1nc(-c2ccc([N+](=O)[O-])cc2)cs1,1.0,0.9982220530509948,SHAP,TP_mol_10_SHAP.png,TP/TP_mol_10_SHAP.png
+individual,TP,146,NNc1nc(-c2ccc([N+](=O)[O-])cc2)cs1,1.0,0.9982220530509948,Integrated Gradients,TP_mol_10_Integrated_Gradients.png,TP/TP_mol_10_Integrated_Gradients.png
+individual,TP,146,NNc1nc(-c2ccc([N+](=O)[O-])cc2)cs1,1.0,0.9982220530509948,DeepLIFT,TP_mol_10_DeepLIFT.png,TP/TP_mol_10_DeepLIFT.png
+individual,TP,146,NNc1nc(-c2ccc([N+](=O)[O-])cc2)cs1,1.0,0.9982220530509948,Occlusion,TP_mol_10_Occlusion.png,TP/TP_mol_10_Occlusion.png
+individual,TP,146,NNc1nc(-c2ccc([N+](=O)[O-])cc2)cs1,1.0,0.9982220530509948,Grad-CAM,TP_mol_10_Grad_CAM.png,TP/TP_mol_10_Grad_CAM.png
+individual,TN,1118,CCCC[C@@H](CC)COC(=O)C(C#N)=C(c1ccccc1)c1ccccc1,0.0,0.0063962405547499,SHAP,TN_mol_1_SHAP.png,TN/TN_mol_1_SHAP.png
+individual,TN,1118,CCCC[C@@H](CC)COC(=O)C(C#N)=C(c1ccccc1)c1ccccc1,0.0,0.0063962405547499,Integrated Gradients,TN_mol_1_Integrated_Gradients.png,TN/TN_mol_1_Integrated_Gradients.png
+individual,TN,1118,CCCC[C@@H](CC)COC(=O)C(C#N)=C(c1ccccc1)c1ccccc1,0.0,0.0063962405547499,DeepLIFT,TN_mol_1_DeepLIFT.png,TN/TN_mol_1_DeepLIFT.png
+individual,TN,1118,CCCC[C@@H](CC)COC(=O)C(C#N)=C(c1ccccc1)c1ccccc1,0.0,0.0063962405547499,Occlusion,TN_mol_1_Occlusion.png,TN/TN_mol_1_Occlusion.png
+individual,TN,1118,CCCC[C@@H](CC)COC(=O)C(C#N)=C(c1ccccc1)c1ccccc1,0.0,0.0063962405547499,Grad-CAM,TN_mol_1_Grad_CAM.png,TN/TN_mol_1_Grad_CAM.png
+individual,TN,1117,CCCCC(CC)COC(=O)C(C#N)=C(c1ccccc1)c1ccccc1,0.0,0.0121134109795093,SHAP,TN_mol_2_SHAP.png,TN/TN_mol_2_SHAP.png
+individual,TN,1117,CCCCC(CC)COC(=O)C(C#N)=C(c1ccccc1)c1ccccc1,0.0,0.0121134109795093,Integrated Gradients,TN_mol_2_Integrated_Gradients.png,TN/TN_mol_2_Integrated_Gradients.png
+individual,TN,1117,CCCCC(CC)COC(=O)C(C#N)=C(c1ccccc1)c1ccccc1,0.0,0.0121134109795093,DeepLIFT,TN_mol_2_DeepLIFT.png,TN/TN_mol_2_DeepLIFT.png
+individual,TN,1117,CCCCC(CC)COC(=O)C(C#N)=C(c1ccccc1)c1ccccc1,0.0,0.0121134109795093,Occlusion,TN_mol_2_Occlusion.png,TN/TN_mol_2_Occlusion.png
+individual,TN,1117,CCCCC(CC)COC(=O)C(C#N)=C(c1ccccc1)c1ccccc1,0.0,0.0121134109795093,Grad-CAM,TN_mol_2_Grad_CAM.png,TN/TN_mol_2_Grad_CAM.png
+individual,TN,1564,CC1C(C)(C)C2=C(C(=O)CCC2)C1(C)C,0.0,0.0137633932754397,SHAP,TN_mol_3_SHAP.png,TN/TN_mol_3_SHAP.png
+individual,TN,1564,CC1C(C)(C)C2=C(C(=O)CCC2)C1(C)C,0.0,0.0137633932754397,Integrated Gradients,TN_mol_3_Integrated_Gradients.png,TN/TN_mol_3_Integrated_Gradients.png
+individual,TN,1564,CC1C(C)(C)C2=C(C(=O)CCC2)C1(C)C,0.0,0.0137633932754397,DeepLIFT,TN_mol_3_DeepLIFT.png,TN/TN_mol_3_DeepLIFT.png
+individual,TN,1564,CC1C(C)(C)C2=C(C(=O)CCC2)C1(C)C,0.0,0.0137633932754397,Occlusion,TN_mol_3_Occlusion.png,TN/TN_mol_3_Occlusion.png
+individual,TN,1564,CC1C(C)(C)C2=C(C(=O)CCC2)C1(C)C,0.0,0.0137633932754397,Grad-CAM,TN_mol_3_Grad_CAM.png,TN/TN_mol_3_Grad_CAM.png
+individual,TN,1226,C=C(C)C(=O)OCCCCCCCC,0.0,0.0139616038650274,SHAP,TN_mol_4_SHAP.png,TN/TN_mol_4_SHAP.png
+individual,TN,1226,C=C(C)C(=O)OCCCCCCCC,0.0,0.0139616038650274,Integrated Gradients,TN_mol_4_Integrated_Gradients.png,TN/TN_mol_4_Integrated_Gradients.png
+individual,TN,1226,C=C(C)C(=O)OCCCCCCCC,0.0,0.0139616038650274,DeepLIFT,TN_mol_4_DeepLIFT.png,TN/TN_mol_4_DeepLIFT.png
+individual,TN,1226,C=C(C)C(=O)OCCCCCCCC,0.0,0.0139616038650274,Occlusion,TN_mol_4_Occlusion.png,TN/TN_mol_4_Occlusion.png
+individual,TN,1226,C=C(C)C(=O)OCCCCCCCC,0.0,0.0139616038650274,Grad-CAM,TN_mol_4_Grad_CAM.png,TN/TN_mol_4_Grad_CAM.png
+individual,TN,295,C=C(C)C(=O)OCC(C)C,0.0,0.0179223716259002,SHAP,TN_mol_5_SHAP.png,TN/TN_mol_5_SHAP.png
+individual,TN,295,C=C(C)C(=O)OCC(C)C,0.0,0.0179223716259002,Integrated Gradients,TN_mol_5_Integrated_Gradients.png,TN/TN_mol_5_Integrated_Gradients.png
+individual,TN,295,C=C(C)C(=O)OCC(C)C,0.0,0.0179223716259002,DeepLIFT,TN_mol_5_DeepLIFT.png,TN/TN_mol_5_DeepLIFT.png
+individual,TN,295,C=C(C)C(=O)OCC(C)C,0.0,0.0179223716259002,Occlusion,TN_mol_5_Occlusion.png,TN/TN_mol_5_Occlusion.png
+individual,TN,295,C=C(C)C(=O)OCC(C)C,0.0,0.0179223716259002,Grad-CAM,TN_mol_5_Grad_CAM.png,TN/TN_mol_5_Grad_CAM.png
+individual,TN,215,CCCC[C@@H](CC)COC(=O)/C=C/c1ccc(OC)cc1,0.0,0.0179496780037879,SHAP,TN_mol_6_SHAP.png,TN/TN_mol_6_SHAP.png
+individual,TN,215,CCCC[C@@H](CC)COC(=O)/C=C/c1ccc(OC)cc1,0.0,0.0179496780037879,Integrated Gradients,TN_mol_6_Integrated_Gradients.png,TN/TN_mol_6_Integrated_Gradients.png
+individual,TN,215,CCCC[C@@H](CC)COC(=O)/C=C/c1ccc(OC)cc1,0.0,0.0179496780037879,DeepLIFT,TN_mol_6_DeepLIFT.png,TN/TN_mol_6_DeepLIFT.png
+individual,TN,215,CCCC[C@@H](CC)COC(=O)/C=C/c1ccc(OC)cc1,0.0,0.0179496780037879,Occlusion,TN_mol_6_Occlusion.png,TN/TN_mol_6_Occlusion.png
+individual,TN,215,CCCC[C@@H](CC)COC(=O)/C=C/c1ccc(OC)cc1,0.0,0.0179496780037879,Grad-CAM,TN_mol_6_Grad_CAM.png,TN/TN_mol_6_Grad_CAM.png
+individual,TN,182,C=C(C)C1CC=C(C=O)CC1,0.0,0.0204215124249458,SHAP,TN_mol_7_SHAP.png,TN/TN_mol_7_SHAP.png
+individual,TN,182,C=C(C)C1CC=C(C=O)CC1,0.0,0.0204215124249458,Integrated Gradients,TN_mol_7_Integrated_Gradients.png,TN/TN_mol_7_Integrated_Gradients.png
+individual,TN,182,C=C(C)C1CC=C(C=O)CC1,0.0,0.0204215124249458,DeepLIFT,TN_mol_7_DeepLIFT.png,TN/TN_mol_7_DeepLIFT.png
+individual,TN,182,C=C(C)C1CC=C(C=O)CC1,0.0,0.0204215124249458,Occlusion,TN_mol_7_Occlusion.png,TN/TN_mol_7_Occlusion.png
+individual,TN,182,C=C(C)C1CC=C(C=O)CC1,0.0,0.0204215124249458,Grad-CAM,TN_mol_7_Grad_CAM.png,TN/TN_mol_7_Grad_CAM.png
+individual,TN,265,CC(=O)C=CC1=C(C)CCCC1(C)C,0.0,0.0234223343431949,SHAP,TN_mol_8_SHAP.png,TN/TN_mol_8_SHAP.png
+individual,TN,265,CC(=O)C=CC1=C(C)CCCC1(C)C,0.0,0.0234223343431949,Integrated Gradients,TN_mol_8_Integrated_Gradients.png,TN/TN_mol_8_Integrated_Gradients.png
+individual,TN,265,CC(=O)C=CC1=C(C)CCCC1(C)C,0.0,0.0234223343431949,DeepLIFT,TN_mol_8_DeepLIFT.png,TN/TN_mol_8_DeepLIFT.png
+individual,TN,265,CC(=O)C=CC1=C(C)CCCC1(C)C,0.0,0.0234223343431949,Occlusion,TN_mol_8_Occlusion.png,TN/TN_mol_8_Occlusion.png
+individual,TN,265,CC(=O)C=CC1=C(C)CCCC1(C)C,0.0,0.0234223343431949,Grad-CAM,TN_mol_8_Grad_CAM.png,TN/TN_mol_8_Grad_CAM.png
+individual,TN,216,CCCCC(CC)COC(=O)C=Cc1ccc(OC)cc1,0.0,0.0262631475925445,SHAP,TN_mol_9_SHAP.png,TN/TN_mol_9_SHAP.png
+individual,TN,216,CCCCC(CC)COC(=O)C=Cc1ccc(OC)cc1,0.0,0.0262631475925445,Integrated Gradients,TN_mol_9_Integrated_Gradients.png,TN/TN_mol_9_Integrated_Gradients.png
+individual,TN,216,CCCCC(CC)COC(=O)C=Cc1ccc(OC)cc1,0.0,0.0262631475925445,DeepLIFT,TN_mol_9_DeepLIFT.png,TN/TN_mol_9_DeepLIFT.png
+individual,TN,216,CCCCC(CC)COC(=O)C=Cc1ccc(OC)cc1,0.0,0.0262631475925445,Occlusion,TN_mol_9_Occlusion.png,TN/TN_mol_9_Occlusion.png
+individual,TN,216,CCCCC(CC)COC(=O)C=Cc1ccc(OC)cc1,0.0,0.0262631475925445,Grad-CAM,TN_mol_9_Grad_CAM.png,TN/TN_mol_9_Grad_CAM.png
+individual,TN,380,CC(C)=C1CCC(C)CC1=O,0.0,0.0280878152698278,SHAP,TN_mol_10_SHAP.png,TN/TN_mol_10_SHAP.png
+individual,TN,380,CC(C)=C1CCC(C)CC1=O,0.0,0.0280878152698278,Integrated Gradients,TN_mol_10_Integrated_Gradients.png,TN/TN_mol_10_Integrated_Gradients.png
+individual,TN,380,CC(C)=C1CCC(C)CC1=O,0.0,0.0280878152698278,DeepLIFT,TN_mol_10_DeepLIFT.png,TN/TN_mol_10_DeepLIFT.png
+individual,TN,380,CC(C)=C1CCC(C)CC1=O,0.0,0.0280878152698278,Occlusion,TN_mol_10_Occlusion.png,TN/TN_mol_10_Occlusion.png
+individual,TN,380,CC(C)=C1CCC(C)CC1=O,0.0,0.0280878152698278,Grad-CAM,TN_mol_10_Grad_CAM.png,TN/TN_mol_10_Grad_CAM.png
+individual,FP,798,Cc1ccc([N+](=O)[O-])cc1NO,0.0,0.989966869354248,SHAP,FP_mol_1_SHAP.png,FP/FP_mol_1_SHAP.png
+individual,FP,798,Cc1ccc([N+](=O)[O-])cc1NO,0.0,0.989966869354248,Integrated Gradients,FP_mol_1_Integrated_Gradients.png,FP/FP_mol_1_Integrated_Gradients.png
+individual,FP,798,Cc1ccc([N+](=O)[O-])cc1NO,0.0,0.989966869354248,DeepLIFT,FP_mol_1_DeepLIFT.png,FP/FP_mol_1_DeepLIFT.png
+individual,FP,798,Cc1ccc([N+](=O)[O-])cc1NO,0.0,0.989966869354248,Occlusion,FP_mol_1_Occlusion.png,FP/FP_mol_1_Occlusion.png
+individual,FP,798,Cc1ccc([N+](=O)[O-])cc1NO,0.0,0.989966869354248,Grad-CAM,FP_mol_1_Grad_CAM.png,FP/FP_mol_1_Grad_CAM.png
+individual,FP,1505,N#Cc1ccc([N+](=O)[O-])cc1,0.0,0.986213743686676,SHAP,FP_mol_2_SHAP.png,FP/FP_mol_2_SHAP.png
+individual,FP,1505,N#Cc1ccc([N+](=O)[O-])cc1,0.0,0.986213743686676,Integrated Gradients,FP_mol_2_Integrated_Gradients.png,FP/FP_mol_2_Integrated_Gradients.png
+individual,FP,1505,N#Cc1ccc([N+](=O)[O-])cc1,0.0,0.986213743686676,DeepLIFT,FP_mol_2_DeepLIFT.png,FP/FP_mol_2_DeepLIFT.png
+individual,FP,1505,N#Cc1ccc([N+](=O)[O-])cc1,0.0,0.986213743686676,Occlusion,FP_mol_2_Occlusion.png,FP/FP_mol_2_Occlusion.png
+individual,FP,1505,N#Cc1ccc([N+](=O)[O-])cc1,0.0,0.986213743686676,Grad-CAM,FP_mol_2_Grad_CAM.png,FP/FP_mol_2_Grad_CAM.png
+individual,FP,193,Cc1ccc([N+](=O)[O-])cc1N=[N+]([O-])c1cc([N+](=O)[O-])ccc1C,0.0,0.9835593104362488,SHAP,FP_mol_3_SHAP.png,FP/FP_mol_3_SHAP.png
+individual,FP,193,Cc1ccc([N+](=O)[O-])cc1N=[N+]([O-])c1cc([N+](=O)[O-])ccc1C,0.0,0.9835593104362488,Integrated Gradients,FP_mol_3_Integrated_Gradients.png,FP/FP_mol_3_Integrated_Gradients.png
+individual,FP,193,Cc1ccc([N+](=O)[O-])cc1N=[N+]([O-])c1cc([N+](=O)[O-])ccc1C,0.0,0.9835593104362488,DeepLIFT,FP_mol_3_DeepLIFT.png,FP/FP_mol_3_DeepLIFT.png
+individual,FP,193,Cc1ccc([N+](=O)[O-])cc1N=[N+]([O-])c1cc([N+](=O)[O-])ccc1C,0.0,0.9835593104362488,Occlusion,FP_mol_3_Occlusion.png,FP/FP_mol_3_Occlusion.png
+individual,FP,193,Cc1ccc([N+](=O)[O-])cc1N=[N+]([O-])c1cc([N+](=O)[O-])ccc1C,0.0,0.9835593104362488,Grad-CAM,FP_mol_3_Grad_CAM.png,FP/FP_mol_3_Grad_CAM.png
+individual,FP,565,CNc1ccc(N=Nc2ccc(NC)cc2)cc1,0.0,0.9833871722221376,SHAP,FP_mol_4_SHAP.png,FP/FP_mol_4_SHAP.png
+individual,FP,565,CNc1ccc(N=Nc2ccc(NC)cc2)cc1,0.0,0.9833871722221376,Integrated Gradients,FP_mol_4_Integrated_Gradients.png,FP/FP_mol_4_Integrated_Gradients.png
+individual,FP,565,CNc1ccc(N=Nc2ccc(NC)cc2)cc1,0.0,0.9833871722221376,DeepLIFT,FP_mol_4_DeepLIFT.png,FP/FP_mol_4_DeepLIFT.png
+individual,FP,565,CNc1ccc(N=Nc2ccc(NC)cc2)cc1,0.0,0.9833871722221376,Occlusion,FP_mol_4_Occlusion.png,FP/FP_mol_4_Occlusion.png
+individual,FP,565,CNc1ccc(N=Nc2ccc(NC)cc2)cc1,0.0,0.9833871722221376,Grad-CAM,FP_mol_4_Grad_CAM.png,FP/FP_mol_4_Grad_CAM.png
+individual,FP,76,Cc1ccc(N(CCCl)CCCl)cc1,0.0,0.9833070039749146,SHAP,FP_mol_5_SHAP.png,FP/FP_mol_5_SHAP.png
+individual,FP,76,Cc1ccc(N(CCCl)CCCl)cc1,0.0,0.9833070039749146,Integrated Gradients,FP_mol_5_Integrated_Gradients.png,FP/FP_mol_5_Integrated_Gradients.png
+individual,FP,76,Cc1ccc(N(CCCl)CCCl)cc1,0.0,0.9833070039749146,DeepLIFT,FP_mol_5_DeepLIFT.png,FP/FP_mol_5_DeepLIFT.png
+individual,FP,76,Cc1ccc(N(CCCl)CCCl)cc1,0.0,0.9833070039749146,Occlusion,FP_mol_5_Occlusion.png,FP/FP_mol_5_Occlusion.png
+individual,FP,76,Cc1ccc(N(CCCl)CCCl)cc1,0.0,0.9833070039749146,Grad-CAM,FP_mol_5_Grad_CAM.png,FP/FP_mol_5_Grad_CAM.png
+individual,FP,512,O=[N+]([O-])OCC(CO[N+](=O)[O-])(CO[N+](=O)[O-])CO[N+](=O)[O-],0.0,0.9812313914299012,SHAP,FP_mol_6_SHAP.png,FP/FP_mol_6_SHAP.png
+individual,FP,512,O=[N+]([O-])OCC(CO[N+](=O)[O-])(CO[N+](=O)[O-])CO[N+](=O)[O-],0.0,0.9812313914299012,Integrated Gradients,FP_mol_6_Integrated_Gradients.png,FP/FP_mol_6_Integrated_Gradients.png
+individual,FP,512,O=[N+]([O-])OCC(CO[N+](=O)[O-])(CO[N+](=O)[O-])CO[N+](=O)[O-],0.0,0.9812313914299012,DeepLIFT,FP_mol_6_DeepLIFT.png,FP/FP_mol_6_DeepLIFT.png
+individual,FP,512,O=[N+]([O-])OCC(CO[N+](=O)[O-])(CO[N+](=O)[O-])CO[N+](=O)[O-],0.0,0.9812313914299012,Occlusion,FP_mol_6_Occlusion.png,FP/FP_mol_6_Occlusion.png
+individual,FP,512,O=[N+]([O-])OCC(CO[N+](=O)[O-])(CO[N+](=O)[O-])CO[N+](=O)[O-],0.0,0.9812313914299012,Grad-CAM,FP_mol_6_Grad_CAM.png,FP/FP_mol_6_Grad_CAM.png
+individual,FP,802,Cn1cnc2cc([N+](=O)[O-])ccc21,0.0,0.9801738262176514,SHAP,FP_mol_7_SHAP.png,FP/FP_mol_7_SHAP.png
+individual,FP,802,Cn1cnc2cc([N+](=O)[O-])ccc21,0.0,0.9801738262176514,Integrated Gradients,FP_mol_7_Integrated_Gradients.png,FP/FP_mol_7_Integrated_Gradients.png
+individual,FP,802,Cn1cnc2cc([N+](=O)[O-])ccc21,0.0,0.9801738262176514,DeepLIFT,FP_mol_7_DeepLIFT.png,FP/FP_mol_7_DeepLIFT.png
+individual,FP,802,Cn1cnc2cc([N+](=O)[O-])ccc21,0.0,0.9801738262176514,Occlusion,FP_mol_7_Occlusion.png,FP/FP_mol_7_Occlusion.png
+individual,FP,802,Cn1cnc2cc([N+](=O)[O-])ccc21,0.0,0.9801738262176514,Grad-CAM,FP_mol_7_Grad_CAM.png,FP/FP_mol_7_Grad_CAM.png
+individual,FP,1246,O=[N+]([O-])c1c2c(c3ccc4cccc5ccc1c3c45)C=CCC2,0.0,0.9767306447029114,SHAP,FP_mol_8_SHAP.png,FP/FP_mol_8_SHAP.png
+individual,FP,1246,O=[N+]([O-])c1c2c(c3ccc4cccc5ccc1c3c45)C=CCC2,0.0,0.9767306447029114,Integrated Gradients,FP_mol_8_Integrated_Gradients.png,FP/FP_mol_8_Integrated_Gradients.png
+individual,FP,1246,O=[N+]([O-])c1c2c(c3ccc4cccc5ccc1c3c45)C=CCC2,0.0,0.9767306447029114,DeepLIFT,FP_mol_8_DeepLIFT.png,FP/FP_mol_8_DeepLIFT.png
+individual,FP,1246,O=[N+]([O-])c1c2c(c3ccc4cccc5ccc1c3c45)C=CCC2,0.0,0.9767306447029114,Occlusion,FP_mol_8_Occlusion.png,FP/FP_mol_8_Occlusion.png
+individual,FP,1246,O=[N+]([O-])c1c2c(c3ccc4cccc5ccc1c3c45)C=CCC2,0.0,0.9767306447029114,Grad-CAM,FP_mol_8_Grad_CAM.png,FP/FP_mol_8_Grad_CAM.png
+individual,FP,335,Cc1ccc(Nc2ccc(O)c3c2C(=O)c2ccccc2C3=O)cc1,0.0,0.973102867603302,SHAP,FP_mol_9_SHAP.png,FP/FP_mol_9_SHAP.png
+individual,FP,335,Cc1ccc(Nc2ccc(O)c3c2C(=O)c2ccccc2C3=O)cc1,0.0,0.973102867603302,Integrated Gradients,FP_mol_9_Integrated_Gradients.png,FP/FP_mol_9_Integrated_Gradients.png
+individual,FP,335,Cc1ccc(Nc2ccc(O)c3c2C(=O)c2ccccc2C3=O)cc1,0.0,0.973102867603302,DeepLIFT,FP_mol_9_DeepLIFT.png,FP/FP_mol_9_DeepLIFT.png
+individual,FP,335,Cc1ccc(Nc2ccc(O)c3c2C(=O)c2ccccc2C3=O)cc1,0.0,0.973102867603302,Occlusion,FP_mol_9_Occlusion.png,FP/FP_mol_9_Occlusion.png
+individual,FP,335,Cc1ccc(Nc2ccc(O)c3c2C(=O)c2ccccc2C3=O)cc1,0.0,0.973102867603302,Grad-CAM,FP_mol_9_Grad_CAM.png,FP/FP_mol_9_Grad_CAM.png
+individual,FP,466,Cc1ccc(NO)cc1[N+](=O)[O-],0.0,0.9625868797302246,SHAP,FP_mol_10_SHAP.png,FP/FP_mol_10_SHAP.png
+individual,FP,466,Cc1ccc(NO)cc1[N+](=O)[O-],0.0,0.9625868797302246,Integrated Gradients,FP_mol_10_Integrated_Gradients.png,FP/FP_mol_10_Integrated_Gradients.png
+individual,FP,466,Cc1ccc(NO)cc1[N+](=O)[O-],0.0,0.9625868797302246,DeepLIFT,FP_mol_10_DeepLIFT.png,FP/FP_mol_10_DeepLIFT.png
+individual,FP,466,Cc1ccc(NO)cc1[N+](=O)[O-],0.0,0.9625868797302246,Occlusion,FP_mol_10_Occlusion.png,FP/FP_mol_10_Occlusion.png
+individual,FP,466,Cc1ccc(NO)cc1[N+](=O)[O-],0.0,0.9625868797302246,Grad-CAM,FP_mol_10_Grad_CAM.png,FP/FP_mol_10_Grad_CAM.png
+individual,FN,386,C=CCC1C(=O)C=C(OC(=O)C2C(C=C(C)C)C2(C)C)C1C,1.0,0.0634808912873268,SHAP,FN_mol_1_SHAP.png,FN/FN_mol_1_SHAP.png
+individual,FN,386,C=CCC1C(=O)C=C(OC(=O)C2C(C=C(C)C)C2(C)C)C1C,1.0,0.0634808912873268,Integrated Gradients,FN_mol_1_Integrated_Gradients.png,FN/FN_mol_1_Integrated_Gradients.png
+individual,FN,386,C=CCC1C(=O)C=C(OC(=O)C2C(C=C(C)C)C2(C)C)C1C,1.0,0.0634808912873268,DeepLIFT,FN_mol_1_DeepLIFT.png,FN/FN_mol_1_DeepLIFT.png
+individual,FN,386,C=CCC1C(=O)C=C(OC(=O)C2C(C=C(C)C)C2(C)C)C1C,1.0,0.0634808912873268,Occlusion,FN_mol_1_Occlusion.png,FN/FN_mol_1_Occlusion.png
+individual,FN,386,C=CCC1C(=O)C=C(OC(=O)C2C(C=C(C)C)C2(C)C)C1C,1.0,0.0634808912873268,Grad-CAM,FN_mol_1_Grad_CAM.png,FN/FN_mol_1_Grad_CAM.png
+individual,FN,490,Nc1ccc(Cl)cc1,1.0,0.0774889811873436,SHAP,FN_mol_2_SHAP.png,FN/FN_mol_2_SHAP.png
+individual,FN,490,Nc1ccc(Cl)cc1,1.0,0.0774889811873436,Integrated Gradients,FN_mol_2_Integrated_Gradients.png,FN/FN_mol_2_Integrated_Gradients.png
+individual,FN,490,Nc1ccc(Cl)cc1,1.0,0.0774889811873436,DeepLIFT,FN_mol_2_DeepLIFT.png,FN/FN_mol_2_DeepLIFT.png
+individual,FN,490,Nc1ccc(Cl)cc1,1.0,0.0774889811873436,Occlusion,FN_mol_2_Occlusion.png,FN/FN_mol_2_Occlusion.png
+individual,FN,490,Nc1ccc(Cl)cc1,1.0,0.0774889811873436,Grad-CAM,FN_mol_2_Grad_CAM.png,FN/FN_mol_2_Grad_CAM.png
+individual,FN,137,O=C(/C=C/c1ccccc1)OC/C=C/c1ccccc1,1.0,0.1036164239048957,SHAP,FN_mol_3_SHAP.png,FN/FN_mol_3_SHAP.png
+individual,FN,137,O=C(/C=C/c1ccccc1)OC/C=C/c1ccccc1,1.0,0.1036164239048957,Integrated Gradients,FN_mol_3_Integrated_Gradients.png,FN/FN_mol_3_Integrated_Gradients.png
+individual,FN,137,O=C(/C=C/c1ccccc1)OC/C=C/c1ccccc1,1.0,0.1036164239048957,DeepLIFT,FN_mol_3_DeepLIFT.png,FN/FN_mol_3_DeepLIFT.png
+individual,FN,137,O=C(/C=C/c1ccccc1)OC/C=C/c1ccccc1,1.0,0.1036164239048957,Occlusion,FN_mol_3_Occlusion.png,FN/FN_mol_3_Occlusion.png
+individual,FN,137,O=C(/C=C/c1ccccc1)OC/C=C/c1ccccc1,1.0,0.1036164239048957,Grad-CAM,FN_mol_3_Grad_CAM.png,FN/FN_mol_3_Grad_CAM.png
+individual,FN,1235,Nc1ccccc1S(=O)(=O)O,1.0,0.1168526262044906,SHAP,FN_mol_4_SHAP.png,FN/FN_mol_4_SHAP.png
+individual,FN,1235,Nc1ccccc1S(=O)(=O)O,1.0,0.1168526262044906,Integrated Gradients,FN_mol_4_Integrated_Gradients.png,FN/FN_mol_4_Integrated_Gradients.png
+individual,FN,1235,Nc1ccccc1S(=O)(=O)O,1.0,0.1168526262044906,DeepLIFT,FN_mol_4_DeepLIFT.png,FN/FN_mol_4_DeepLIFT.png
+individual,FN,1235,Nc1ccccc1S(=O)(=O)O,1.0,0.1168526262044906,Occlusion,FN_mol_4_Occlusion.png,FN/FN_mol_4_Occlusion.png
+individual,FN,1235,Nc1ccccc1S(=O)(=O)O,1.0,0.1168526262044906,Grad-CAM,FN_mol_4_Grad_CAM.png,FN/FN_mol_4_Grad_CAM.png
+individual,FN,681,Nc1ccc2ccccc2c1S(=O)(=O)O,1.0,0.1183915808796882,SHAP,FN_mol_5_SHAP.png,FN/FN_mol_5_SHAP.png
+individual,FN,681,Nc1ccc2ccccc2c1S(=O)(=O)O,1.0,0.1183915808796882,Integrated Gradients,FN_mol_5_Integrated_Gradients.png,FN/FN_mol_5_Integrated_Gradients.png
+individual,FN,681,Nc1ccc2ccccc2c1S(=O)(=O)O,1.0,0.1183915808796882,DeepLIFT,FN_mol_5_DeepLIFT.png,FN/FN_mol_5_DeepLIFT.png
+individual,FN,681,Nc1ccc2ccccc2c1S(=O)(=O)O,1.0,0.1183915808796882,Occlusion,FN_mol_5_Occlusion.png,FN/FN_mol_5_Occlusion.png
+individual,FN,681,Nc1ccc2ccccc2c1S(=O)(=O)O,1.0,0.1183915808796882,Grad-CAM,FN_mol_5_Grad_CAM.png,FN/FN_mol_5_Grad_CAM.png
+individual,FN,181,C=C(C=O)CCCC,1.0,0.1337429583072662,SHAP,FN_mol_6_SHAP.png,FN/FN_mol_6_SHAP.png
+individual,FN,181,C=C(C=O)CCCC,1.0,0.1337429583072662,Integrated Gradients,FN_mol_6_Integrated_Gradients.png,FN/FN_mol_6_Integrated_Gradients.png
+individual,FN,181,C=C(C=O)CCCC,1.0,0.1337429583072662,DeepLIFT,FN_mol_6_DeepLIFT.png,FN/FN_mol_6_DeepLIFT.png
+individual,FN,181,C=C(C=O)CCCC,1.0,0.1337429583072662,Occlusion,FN_mol_6_Occlusion.png,FN/FN_mol_6_Occlusion.png
+individual,FN,181,C=C(C=O)CCCC,1.0,0.1337429583072662,Grad-CAM,FN_mol_6_Grad_CAM.png,FN/FN_mol_6_Grad_CAM.png
+individual,FN,282,C/C(C=O)=C(/Cl)C(=O)O,1.0,0.1625246703624725,SHAP,FN_mol_7_SHAP.png,FN/FN_mol_7_SHAP.png
+individual,FN,282,C/C(C=O)=C(/Cl)C(=O)O,1.0,0.1625246703624725,Integrated Gradients,FN_mol_7_Integrated_Gradients.png,FN/FN_mol_7_Integrated_Gradients.png
+individual,FN,282,C/C(C=O)=C(/Cl)C(=O)O,1.0,0.1625246703624725,DeepLIFT,FN_mol_7_DeepLIFT.png,FN/FN_mol_7_DeepLIFT.png
+individual,FN,282,C/C(C=O)=C(/Cl)C(=O)O,1.0,0.1625246703624725,Occlusion,FN_mol_7_Occlusion.png,FN/FN_mol_7_Occlusion.png
+individual,FN,282,C/C(C=O)=C(/Cl)C(=O)O,1.0,0.1625246703624725,Grad-CAM,FN_mol_7_Grad_CAM.png,FN/FN_mol_7_Grad_CAM.png
+individual,FN,1201,Nc1ccn(C2CCC(CO)O2)c(=O)n1,1.0,0.1633495241403579,SHAP,FN_mol_8_SHAP.png,FN/FN_mol_8_SHAP.png
+individual,FN,1201,Nc1ccn(C2CCC(CO)O2)c(=O)n1,1.0,0.1633495241403579,Integrated Gradients,FN_mol_8_Integrated_Gradients.png,FN/FN_mol_8_Integrated_Gradients.png
+individual,FN,1201,Nc1ccn(C2CCC(CO)O2)c(=O)n1,1.0,0.1633495241403579,DeepLIFT,FN_mol_8_DeepLIFT.png,FN/FN_mol_8_DeepLIFT.png
+individual,FN,1201,Nc1ccn(C2CCC(CO)O2)c(=O)n1,1.0,0.1633495241403579,Occlusion,FN_mol_8_Occlusion.png,FN/FN_mol_8_Occlusion.png
+individual,FN,1201,Nc1ccn(C2CCC(CO)O2)c(=O)n1,1.0,0.1633495241403579,Grad-CAM,FN_mol_8_Grad_CAM.png,FN/FN_mol_8_Grad_CAM.png
+individual,FN,624,O=C(O)/C=C(\Br)C(=O)c1ccccc1,1.0,0.1687074154615402,SHAP,FN_mol_9_SHAP.png,FN/FN_mol_9_SHAP.png
+individual,FN,624,O=C(O)/C=C(\Br)C(=O)c1ccccc1,1.0,0.1687074154615402,Integrated Gradients,FN_mol_9_Integrated_Gradients.png,FN/FN_mol_9_Integrated_Gradients.png
+individual,FN,624,O=C(O)/C=C(\Br)C(=O)c1ccccc1,1.0,0.1687074154615402,DeepLIFT,FN_mol_9_DeepLIFT.png,FN/FN_mol_9_DeepLIFT.png
+individual,FN,624,O=C(O)/C=C(\Br)C(=O)c1ccccc1,1.0,0.1687074154615402,Occlusion,FN_mol_9_Occlusion.png,FN/FN_mol_9_Occlusion.png
+individual,FN,624,O=C(O)/C=C(\Br)C(=O)c1ccccc1,1.0,0.1687074154615402,Grad-CAM,FN_mol_9_Grad_CAM.png,FN/FN_mol_9_Grad_CAM.png
+individual,FN,987,Cc1ccc2[nH]c(N)nc2c1,1.0,0.2007043361663818,SHAP,FN_mol_10_SHAP.png,FN/FN_mol_10_SHAP.png
+individual,FN,987,Cc1ccc2[nH]c(N)nc2c1,1.0,0.2007043361663818,Integrated Gradients,FN_mol_10_Integrated_Gradients.png,FN/FN_mol_10_Integrated_Gradients.png
+individual,FN,987,Cc1ccc2[nH]c(N)nc2c1,1.0,0.2007043361663818,DeepLIFT,FN_mol_10_DeepLIFT.png,FN/FN_mol_10_DeepLIFT.png
+individual,FN,987,Cc1ccc2[nH]c(N)nc2c1,1.0,0.2007043361663818,Occlusion,FN_mol_10_Occlusion.png,FN/FN_mol_10_Occlusion.png
+individual,FN,987,Cc1ccc2[nH]c(N)nc2c1,1.0,0.2007043361663818,Grad-CAM,FN_mol_10_Grad_CAM.png,FN/FN_mol_10_Grad_CAM.png
+comparison,TP_vs_TN,1_vs_70,CC=C(Cl)C1=CC(=O)C23CC2C(C)(C)OC3(O)C1=O | CCCCOC(=O)/C=C\C(=O)OCCCC,1.0 | 0.0,0.9169 | 0.0790,SHAP,TP_vs_TN_SHAP.png,compare/TP_vs_TN_SHAP.png
+comparison,TP_vs_TN,1_vs_70,CC=C(Cl)C1=CC(=O)C23CC2C(C)(C)OC3(O)C1=O | CCCCOC(=O)/C=C\C(=O)OCCCC,1.0 | 0.0,0.9169 | 0.0790,Integrated Gradients,TP_vs_TN_Integrated_Gradients.png,compare/TP_vs_TN_Integrated_Gradients.png
+comparison,TP_vs_TN,1_vs_70,CC=C(Cl)C1=CC(=O)C23CC2C(C)(C)OC3(O)C1=O | CCCCOC(=O)/C=C\C(=O)OCCCC,1.0 | 0.0,0.9169 | 0.0790,DeepLIFT,TP_vs_TN_DeepLIFT.png,compare/TP_vs_TN_DeepLIFT.png
+comparison,TP_vs_TN,1_vs_70,CC=C(Cl)C1=CC(=O)C23CC2C(C)(C)OC3(O)C1=O | CCCCOC(=O)/C=C\C(=O)OCCCC,1.0 | 0.0,0.9169 | 0.0790,Occlusion,TP_vs_TN_Occlusion.png,compare/TP_vs_TN_Occlusion.png
+comparison,TP_vs_TN,1_vs_70,CC=C(Cl)C1=CC(=O)C23CC2C(C)(C)OC3(O)C1=O | CCCCOC(=O)/C=C\C(=O)OCCCC,1.0 | 0.0,0.9169 | 0.0790,Grad-CAM,TP_vs_TN_Grad_CAM.png,compare/TP_vs_TN_Grad_CAM.png
+comparison,TP_vs_FN,1_vs_11,CC=C(Cl)C1=CC(=O)C23CC2C(C)(C)OC3(O)C1=O | C=C1CC(=CC)C(=O)OC2CCN3CC=C(COC(=O)C1(C)O)C23,1.0 | 1.0,0.9169 | 0.3152,SHAP,TP_vs_FN_SHAP.png,compare/TP_vs_FN_SHAP.png
+comparison,TP_vs_FN,1_vs_11,CC=C(Cl)C1=CC(=O)C23CC2C(C)(C)OC3(O)C1=O | C=C1CC(=CC)C(=O)OC2CCN3CC=C(COC(=O)C1(C)O)C23,1.0 | 1.0,0.9169 | 0.3152,Integrated Gradients,TP_vs_FN_Integrated_Gradients.png,compare/TP_vs_FN_Integrated_Gradients.png
+comparison,TP_vs_FN,1_vs_11,CC=C(Cl)C1=CC(=O)C23CC2C(C)(C)OC3(O)C1=O | C=C1CC(=CC)C(=O)OC2CCN3CC=C(COC(=O)C1(C)O)C23,1.0 | 1.0,0.9169 | 0.3152,DeepLIFT,TP_vs_FN_DeepLIFT.png,compare/TP_vs_FN_DeepLIFT.png
+comparison,TP_vs_FN,1_vs_11,CC=C(Cl)C1=CC(=O)C23CC2C(C)(C)OC3(O)C1=O | C=C1CC(=CC)C(=O)OC2CCN3CC=C(COC(=O)C1(C)O)C23,1.0 | 1.0,0.9169 | 0.3152,Occlusion,TP_vs_FN_Occlusion.png,compare/TP_vs_FN_Occlusion.png
+comparison,TP_vs_FN,1_vs_11,CC=C(Cl)C1=CC(=O)C23CC2C(C)(C)OC3(O)C1=O | C=C1CC(=CC)C(=O)OC2CCN3CC=C(COC(=O)C1(C)O)C23,1.0 | 1.0,0.9169 | 0.3152,Grad-CAM,TP_vs_FN_Grad_CAM.png,compare/TP_vs_FN_Grad_CAM.png
+comparison,FP_vs_TN,28_vs_70,O=C1C=CC(=O)C(Cl)=C1 | CCCCOC(=O)/C=C\C(=O)OCCCC,0.0 | 0.0,0.6087 | 0.0790,SHAP,FP_vs_TN_SHAP.png,compare/FP_vs_TN_SHAP.png
+comparison,FP_vs_TN,28_vs_70,O=C1C=CC(=O)C(Cl)=C1 | CCCCOC(=O)/C=C\C(=O)OCCCC,0.0 | 0.0,0.6087 | 0.0790,Integrated Gradients,FP_vs_TN_Integrated_Gradients.png,compare/FP_vs_TN_Integrated_Gradients.png
+comparison,FP_vs_TN,28_vs_70,O=C1C=CC(=O)C(Cl)=C1 | CCCCOC(=O)/C=C\C(=O)OCCCC,0.0 | 0.0,0.6087 | 0.0790,DeepLIFT,FP_vs_TN_DeepLIFT.png,compare/FP_vs_TN_DeepLIFT.png
+comparison,FP_vs_TN,28_vs_70,O=C1C=CC(=O)C(Cl)=C1 | CCCCOC(=O)/C=C\C(=O)OCCCC,0.0 | 0.0,0.6087 | 0.0790,Occlusion,FP_vs_TN_Occlusion.png,compare/FP_vs_TN_Occlusion.png
+comparison,FP_vs_TN,28_vs_70,O=C1C=CC(=O)C(Cl)=C1 | CCCCOC(=O)/C=C\C(=O)OCCCC,0.0 | 0.0,0.6087 | 0.0790,Grad-CAM,FP_vs_TN_Grad_CAM.png,compare/FP_vs_TN_Grad_CAM.png
